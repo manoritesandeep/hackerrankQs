@@ -1,0 +1,44 @@
+# Latest - Installing virtual environment using pipenv
+pip3.8 install pipenv
+
+# create a venv
+pipenv install
+
+To activate this project's virtualenv, run 
+pipenv shell.
+
+Alternatively, run a command inside the virtualenv with pipenv run.
+
+
+pip install virtualenv
+
+virtualenv venv --python=python3.* 	(enter version number installed in machine)
+OR 
+virtualenv venv --python=python3
+
+virtualenv - p (python ver C:\Users\manor\AppData\Local\Programs\Python\Python37\python.exe) (name(.venv))
+
+
+# load/activate the env
+.\venv\Scripts\activate.bat
+# activate in mac
+source venv/Scripts/activate
+
+# To decativate 
+deactivate
+
+# To remove venv
+rm -rf venv	# on mac, check for windows
+
+
+# loading list of installed library
+pip freeze
+
+# exporting requirements list
+pip freeze > requirements.txt
+
+# To install libraries from requirements.txt file
+pip install -r requirements.txt
+
+py -m pip install -r requirements.txt
+

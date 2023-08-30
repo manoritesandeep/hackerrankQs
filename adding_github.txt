@@ -4,9 +4,9 @@
 
 2) go to github and create remote repo...
     In cmd type git remote add origin <link to repo>
-
+2.1) to verify the nre remote URl --> git remote -v
 3) the add files ... git add .
 4) commit / stage --> git commit -m "Add msg here"
 5) Push changes --> git push origin <branch (master/main/etc)>
-
+5.1) check status of git --> git status
 Basics... Done, Enjoy!!!

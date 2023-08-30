@@ -1,0 +1,12 @@
+# initial steps of github repo add
+
+1) cd to directory --> git init ... initialize a local repo
+
+2) go to github and create remote repo...
+    In cmd type git remote add origin <link to repo>
+
+3) the add files ... git add .
+4) commit / stage --> git commit -m "Add msg here"
+5) Push changes --> git push origin <branch (master/main/etc)>
+
+Basics... Done, Enjoy!!!

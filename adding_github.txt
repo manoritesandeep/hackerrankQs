@@ -9,4 +9,7 @@
 4) commit / stage --> git commit -m "Add msg here"
 5) Push changes --> git push origin <branch (master/main/etc)>
 5.1) check status of git --> git status
+
+Github help link: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
+
 Basics... Done, Enjoy!!!

@@ -6,6 +6,7 @@ import random
 import re
 import sys
 
+
 #
 # Complete the 'aVeryBigSum' fgit sunction below.
 #
@@ -15,7 +16,11 @@ import sys
 
 def aVeryBigSum(ar):
     # Write your code here
-    ...
+    total=0
+    for i in ar:
+        total += i
+    return n
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')

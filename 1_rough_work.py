@@ -13,6 +13,7 @@
 
 mat = [[11, 2, 4], [4, 5, 6], [10, 8, -12]]
 len_mat = len(mat)
+# print(len_mat)    #3
 print(mat[0][0])
 # print(mat[0][len_mat-1])
 print(mat[1][int(len_mat/2)])

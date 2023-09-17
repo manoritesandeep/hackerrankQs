@@ -23,3 +23,4 @@ r2l = mat[0][len_mat-1] + mat[1][int(len_mat/2)] + mat[2][0]
 print(l2r)
 print(r2l)
 print(abs(l2r-r2l))
+

@@ -23,7 +23,7 @@ Be sure to consider these edge cases:
 """
 meetings = [(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)]
 
-# sort arry by start time
+# sort array by start time
 sorted_meetings = sorted(meetings)
 print(sorted_meetings)  # [(0, 1), (3, 5), (4, 8), (9, 10), (10, 12)]
 
@@ -38,7 +38,10 @@ for current_meeting_start, current_meeting_end in sorted_meetings[1:]:
     # print(current_meeting_start, current_meeting_end)  # 3, 5 | 4, 8 | 9, 10 | 10, 12
     last_merged_meeting_start, last_merged_meeting_end = merged_meetings[-1]    # 0, 1
 
-    # (3, 8) vs (9, 10)... (9, 10) vs (10, 12)
+    # last_meeting vs current_meeting
+    # (0, 1) vs (3, 5)... Thus, append to the current merged_meetings list
+    # (3, 5) vs (4, 8)... update [-1] value
+    # (9, 10) vs (10, 12)
     # # if the current meeting overlaps with last merged meeting, 
     # # use the later end time of the two
     if current_meeting_start <= last_merged_meeting_end:
@@ -61,3 +64,29 @@ print(f"Final merged meetings: {merged_meetings}")
 # Non-overlapping meetings: [(0, 1), (3, 8), (9, 10)]
 # Overlapping meetings: [(0, 1), (3, 8), (9, 12)]
 # Final merged meetings: [(0, 1), (3, 8), (9, 12)]
+
+### define above into a function
+
+def merged_meetings(meetings):
+    # sort array by start time
+    sorted_meetings = sorted(meetings)
+
+    # initialize merged_meetings with the earliest meeting
+    merged_meetings = [sorted_meetings[0]]
+
+    for current_meeting_start, current_meeting_end in sorted_meetings[1:]:
+        last_merged_meeting_start, last_merged_meeting_end = merged_meetings[-1]
+
+        # perform check if current meeting start less than last_merged_meeting_end
+        # if true add that as the last element
+        if (current_meeting_start <= last_merged_meeting_end):
+            # (3, 5) vs (4, 8)... update [-1] value
+            merged_meetings[-1] = (last_merged_meeting_start, 
+                                   max(last_merged_meeting_end, current_meeting_end))
+            
+        else:
+            merged_meetings.append((current_meeting_start, current_meeting_end))
+
+    return merged_meetings
+
+print(f"Merged meetings final function: {merged_meetings(meetings=meetings)}")

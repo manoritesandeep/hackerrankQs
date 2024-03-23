@@ -37,7 +37,7 @@ print(f"Sum of fibonnaci series is : {multiply_list(eg_list)}")
 # Garbage
 """
 
-# Sum of fib
+# Print nth Fib 
 def Fib(n):
     if n < 0:
         print(f"Wrong input: {n}")
@@ -51,14 +51,14 @@ def Fib(n):
     else:
         return Fib(n-1) + Fib(n-2)
 
-print(f"Total of the number is: {Fib(10)}")
+print(f"The number is: {Fib(10)}")
 
-# 2 : Print Fib
-
+# 2 : Sum of fib
 def fibb(n):
 
     a = 0
     b = 1
+    nums = [a,b]
 
     if n < 0:
         print(f"Wrong input: {n}")
@@ -77,9 +77,35 @@ def fibb(n):
             b = c
 
             print(c)
+            nums.append(c)
 
-fibb(5)
+    return sum(nums)
+
+# fibb(5)
+fibb(10)
 
 
+# method 2: return fib nth number
+def fibb_n(n):
+    if n < 0:
+        print(f"Wrong input: {n}")
+        return
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        a = 0
+        b = 1
+        print(a)
+        print(b)
 
+        for i in range(2, n):
+            c = a + b
+            a = b
+            b = c
+            print(c)
 
+        return b  # Return the nth Fibonacci number
+
+print(f"The number is:{fibb_n(10)}")  

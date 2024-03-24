@@ -76,7 +76,7 @@ demand = [ {6 : 55}, {6 : 45}, {6 : 55}, {4 : 40}, {18 : 60}, {10 : 50} ]
 # Counter({6: 3, 4: 1, 18: 1, 10: 1})
 
 shoe_size_count = Counter(shoe_sizes)
-print(shoe_size_count)  # Counter({5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1})
+# print(shoe_size_count)  # Counter({5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1})
 
 # demand_size_count = Counter(
 #     [key for dict in demand for key in dict.keys()]
@@ -96,3 +96,20 @@ for order in demand:
 print(total_sales)
 
 
+### Final solution
+
+num_shoes = int(input())
+shoe_sizes = list(map(int, input().split()))
+num_cust = int(input())
+demand = [dict([map(int, input().split())]) for _ in range(num_cust)]
+
+shoe_size_count = Counter(shoe_sizes)
+
+total_sales = 0
+
+for order in demand:
+    for size, price in order.items():
+        if shoe_size_count[size] > 0:
+            total_sales += price
+            shoe_size_count[size] -= 1
+print(total_sales)

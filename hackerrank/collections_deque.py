@@ -52,14 +52,27 @@ popleft
 # Redirect standard input to read from sample_input
 sys.stdin = io.StringIO(sample_input)
 
-num_operations = int(input())
-methods = [input().split() for _ in range(num_operations)]
-print(methods)
-# ['append 1', 'append 2', 'append 3', 'appendleft 4', 'pop', 'popleft']
+# num_operations = int(input())
+# methods = [input().split() for _ in range(num_operations)]
+# print(methods)
+# # ['append 1', 'append 2', 'append 3', 'appendleft 4', 'pop', 'popleft']
+
+# d = deque()
+# ## d.rotate(3)
+# for _ in range(int(input())):
+#     inp = input().split()
+#     getattr(d, inp[0])(*[inp[1]] if len(inp) > 1 else [])
+# print(*[item for item in d])
 
 d = deque()
-## d.rotate(3)
-for _ in range(int(input())):
-    inp = input().split()
-    getattr(d, inp[0])(*[inp[1]] if len(inp) > 1 else [])
-print(*[item for item in d])
+for i in range(int(input())):
+    k = input().split()
+    if k[0] == 'append':
+        d.append(int(k[1]))
+    elif k[0] == 'pop':
+        d.pop()
+    elif k[0] == 'popleft':
+        d.popleft()
+    elif k[0] == 'appendleft':
+        d.appendleft(int(k[1]))
+print(' '.join(map(str, d)))

@@ -66,6 +66,7 @@ sys.stdin = io.StringIO(sample_input)
 def can_stack_cubes(cubes):
     while cubes:
         large=None
+        # check if last element is greater than first.
         if cubes[-1] > cubes[0]:
             large = cubes.pop()
             print(f"Large pop: {large}")
